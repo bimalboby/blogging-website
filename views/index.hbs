@@ -1,0 +1,44 @@
+
+
+{{>subscribe}}
+<br>
+<br>
+
+<div class="card">
+  <div class="card-header">
+   Blogs
+  </div>
+{{#each blogs}}
+  <div class="card-body">
+    <h5 class="card-title">{{this.heading}}</h5>
+    <p class="card-text">{{this.blog}}</p>
+    <p><i>views:{{this.clicks}}</i></p>
+       <a href="/like-blog/{{this._id}}" class="btn btn-secondary">likes : {{this.likes}}</a>
+    <a href="/read-blog/{{this._id}}" class="btn btn-primary">Read more</a>
+  </div>
+      {{/each}}
+</div>
+
+{{>enquiry}}
+ <h2>Recomendations</h2>
+ <section>
+        
+        <div class="container mt-5">
+            <div class="row">
+                {{#each mostViewed}}
+                <div class="col-md-3">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{this.heading}}</h5>
+                            <p><i>views:{{this.clicks}}</i></p>
+                            <p class="card-text">{{this.blog}}</p>
+                            <a href="/like-blog/{{this._id}}" class="btn btn-secondary">likes : {{this.likes}}</a>
+                            <a href="/read-blog/{{this._id}}" class="btn btn-primary">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                 {{/each}}
+            </div>
+        </div>
+        </div>
+    </section>
